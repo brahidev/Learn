@@ -59,6 +59,9 @@ class Game extends Component {
         const history = this.state.history;
         const current = history[history.length - 1]
         const squares = current.square;
+        if (declaringWinner(squares) || squares[i]) {
+            return;
+        }
         squares[i] = this.state.isNext ? 'X' : 'O';
         this.setState({
             history: history.concat([{
@@ -70,7 +73,13 @@ class Game extends Component {
     render () {
         const history = this.state.history;
         const current = history[history.length - 1];
-        const state = "The next Player is: " + (this.state.isNext ? 'X' : 'O');
+        const winner = declaringWinner(current.square);
+        let status;
+        if(winner) {
+            status = "Winner player: " + winner;
+        } else {
+            status = "The next Player is: " + (this.state.isNext ? 'X' : 'O');
+        }
         return (
             <div className="game">
                 <div className="game-board">
@@ -81,7 +90,7 @@ class Game extends Component {
                 </div>
                 <div className="game-info">
                     <div className="status">
-                        {state}
+                        {status}
                     </div>
                 </div>
             </div>
@@ -95,4 +104,25 @@ class Game extends Component {
 render(
     <Game />,
     document.getElementById('root')
-)
+);
+
+function declaringWinner(square){
+    const lines = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ];
+
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c] = lines[i];
+        if (square[a] && square[a] === square[b] && square[a] === square[c]) {
+            return square[a];
+        }
+    }
+    return null;
+}
