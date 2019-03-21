@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header menu={Items}/>
-        <Content name="Repository of GitHub" year={2019} />
-        <Footer />
+        <Content/>
+        <Footer name="Repository of GitHub" year={2019}/>
       </div>
     );
   }
