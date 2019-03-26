@@ -36,17 +36,18 @@ class Content extends Component{
         });
     }
 
-    handleChangeNumberOne(e) {
-        this.setState({
-            num_one: Number(e.target.value)
-        });
+    handleChangeInput(e) {
+        if (e.target.id === "number_one") {
+            this.setState({
+                num_one: e.target.value
+            });
+        } else {
+            this.setState({
+               num_two: e.target.value 
+            });
+        }
     }
 
-    handleChangeNumberTwo(e) {
-        this.setState({
-            num_two: Number(e.target.value)
-        });
-    }
     render() {
         return(
            <div>
@@ -71,8 +72,8 @@ class Content extends Component{
                    </button>
                </div>
                <div>
-                   <input type="number" id="number_one" placeholder="Numero Uno" value={this.state.num_one} onChange={(e) => this.handleChangeNumberOne(e)}/>
-                   <input type="number" id="number_two" placeholder="Numero Dos" value={this.state.num_two} onChange={(e) => this.handleChangeNumberTwo(e)}/>
+                   <input type="number" id="number_one" placeholder="Numero Uno" value={this.state.num_one} onChange={(e) => this.handleChangeInput(e)}/>
+                   <input type="number" id="number_two" placeholder="Numero Dos" value={this.state.num_two} onChange={(e) => this.handleChangeInput(e)}/>
                    <button onClick={() => this.handleResultClick()}>
                        Sumar
                    </button>
