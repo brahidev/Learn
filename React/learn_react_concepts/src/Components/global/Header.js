@@ -1,5 +1,6 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import logo from "./images/logo.svg";
 import React from "react";
 
@@ -14,7 +15,7 @@ class Header extends Component {
                     {
                         menu.map((value, key) =>
                             <li key={key}>
-                                {value.title}
+                                <Link to={value.url}>{value.title}</Link>
                             </li>
                         )
                     }
