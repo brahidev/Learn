@@ -1,0 +1,19 @@
+{
+  "name": "getting_start_guide",
+  "version": "1.0.0",
+  "description": "Learn NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brahian0701/Learn.git"
+  },
+  "author": "@brahian0701",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brahian0701/Learn/issues"
+  },
+  "homepage": "https://github.com/brahian0701/Learn#readme"
+}
