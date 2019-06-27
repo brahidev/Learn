@@ -17,7 +17,7 @@ class App extends Component {
         children: PropTypes.object.isRequired
     };
   render() {
-      const { children } = this.props;
+  const { children } = this.props;
     return (
       <div className="App">
         <header className="App-header">
