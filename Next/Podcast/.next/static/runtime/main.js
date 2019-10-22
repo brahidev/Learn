@@ -6671,7 +6671,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\LENOVO\\Documents\\Learn\\Platzi\\Next\\Podcast\\.next");
+      source_map_support_1.rewriteStacktrace(error, "/home/brahian/Documents/Learn/Next/Podcast/.next");
       return error;
     }
   };
