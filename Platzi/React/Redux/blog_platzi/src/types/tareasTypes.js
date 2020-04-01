@@ -1,0 +1,6 @@
+export const GET_ALL_TAREAS = 'getAllTareas'
+export const LOADING = 'loadingTareas'
+export const ERROR = 'errorTareas'
+export const CAMBIO_USUARIO_ID = 'cambio_usuario_id'
+export const CAMBIO_TITULO = 'cambio_titulo'
+export const GUARDAR = 'tareasGuardada'
